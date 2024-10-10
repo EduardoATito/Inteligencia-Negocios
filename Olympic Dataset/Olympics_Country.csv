@@ -1,0 +1,235 @@
+noc,country,anoc,continet,isActive
+AFG,Afghanistan,OCA,Asia,TRUE
+ALB,Albania,EOC,Europe,TRUE
+ALG,Algeria,ANOCA,Africa,TRUE
+ASA,American Samoa,ONOC,Oceania,TRUE
+AND,Andorra,EOC,Europe,TRUE
+ANG,Angola,ANOCA,Africa,TRUE
+ANT,Antigua and Barbuda,PASO,America,TRUE
+ARG,Argentina,PASO,America,TRUE
+ARM,Armenia,EOC,Europe,TRUE
+ARU,Aruba,PASO,America,TRUE
+ANZ,Australasia,Not affiliated with any organization,No assigned continent,FALSE
+AUS,Australia,ONOC,Oceania,TRUE
+AUT,Austria,EOC,Europe,TRUE
+AZE,Azerbaijan,EOC,Europe,TRUE
+BRN,Bahrain,OCA,Asia,TRUE
+BAN,Bangladesh,OCA,Asia,TRUE
+BAR,Barbados,PASO,America,TRUE
+BLR,Belarus,EOC,Europe,TRUE
+BEL,Belgium,EOC,Europe,TRUE
+BIZ,Belize,PASO,America,TRUE
+BEN,Benin,ANOCA,Africa,TRUE
+BER,Bermuda,PASO,America,TRUE
+BHU,Bhutan,OCA,Asia,TRUE
+BOH,Bohemia,Not affiliated with any organization,No assigned continent,FALSE
+BOL,Bolivia,PASO,America,TRUE
+BIH,Bosnia and Herzegovina,EOC,Europe,TRUE
+BOT,Botswana,ANOCA,Africa,TRUE
+BRA,Brazil,PASO,America,TRUE
+IVB,British Virgin Islands,PASO,America,TRUE
+BRU,Brunei Darussalam,OCA,Asia,TRUE
+BUL,Bulgaria,EOC,Europe,TRUE
+BUR,Burkina Faso,ANOCA,Africa,TRUE
+BDI,Burundi,ANOCA,Africa,TRUE
+CPV,Cabo Verde,ANOCA,Africa,TRUE
+CAM,Cambodia,OCA,Asia,TRUE
+CMR,Cameroon,ANOCA,Africa,TRUE
+CAN,Canada,PASO,America,TRUE
+CAY,Cayman Islands,PASO,America,TRUE
+CAF,Central African Republic,ANOCA,Africa,TRUE
+CHA,Chad,ANOCA,Africa,TRUE
+CHI,Chile,PASO,America,TRUE
+TPE,Chinese Taipei,OCA,Asia,TRUE
+COL,Colombia,PASO,America,TRUE
+COM,Comoros,ANOCA,Africa,TRUE
+CGO,Congo,ANOCA,Africa,TRUE
+COK,Cook Islands,ONOC,Oceania,TRUE
+CRC,Costa Rica,PASO,America,TRUE
+CIV,Côte d'Ivoire,ANOCA,Africa,TRUE
+CRT,Crete,Not affiliated with any organization,No assigned continent,FALSE
+CRO,Croatia,EOC,Europe,TRUE
+CUB,Cuba,PASO,America,TRUE
+CYP,Cyprus,EOC,Europe,TRUE
+CZE,Czechia,EOC,Europe,TRUE
+TCH,Czechoslovakia,Not affiliated with any organization,No assigned continent,FALSE
+PRK,Democratic People's Republic of Korea,OCA,Asia,TRUE
+COD,Democratic Republic of the Congo,ANOCA,Africa,TRUE
+DEN,Denmark,EOC,Europe,TRUE
+DJI,Djibouti,ANOCA,Africa,TRUE
+DMA,Dominica,PASO,America,TRUE
+DOM,Dominican Republic,PASO,America,TRUE
+GDR,East Germany,No pertenece a ninguno,No pertenece a ninguno,FALSE
+ECU,Ecuador,PASO,America,TRUE
+EGY,Egypt,ANOCA,Africa,TRUE
+ESA,El Salvador,PASO,America,TRUE
+GEQ,Equatorial Guinea,ANOCA,Africa,TRUE
+ERI,Eritrea,ANOCA,Africa,TRUE
+EST,Estonia,EOC,Europe,TRUE
+SWZ,Eswatini,ANOCA,Africa,TRUE
+ETH,Ethiopia,ANOCA,Africa,TRUE
+FSM,Federated States of Micronesia,ONOC,Oceania,TRUE
+FIJ,Fiji,ONOC,Oceania,TRUE
+FIN,Finland,EOC,Europe,TRUE
+FRA,France,EOC,Europe,TRUE
+GAB,Gabon,ANOCA,Africa,TRUE
+GEO,Georgia,EOC,Europe,TRUE
+GER,Germany,EOC,Europe,TRUE
+GHA,Ghana,ANOCA,Africa,TRUE
+GBR,Great Britain,EOC,Europe,TRUE
+GRE,Greece,EOC,Europe,TRUE
+GRN,Grenada,PASO,America,TRUE
+GUM,Guam,ONOC,Oceania,TRUE
+GUA,Guatemala,PASO,America,TRUE
+GUI,Guinea,ANOCA,Africa,TRUE
+GBS,Guinea Bissau,ANOCA,Africa,TRUE
+GUY,Guyana,PASO,America,TRUE
+HAI,Haiti,PASO,America,TRUE
+HON,Honduras,PASO,America,TRUE
+HKG,"Hong Kong, China",OCA,Asia,TRUE
+HUN,Hungary,EOC,Europe,TRUE
+ISL,Iceland,EOC,Europe,TRUE
+IOA,Independent Olympic Athletes,Not affiliated with any organization,No assigned continent,FALSE
+IND,India,OCA,Asia,TRUE
+AIN,Individual Neutral Athletes,Not affiliated with any organization,No assigned continent,FALSE
+INA,Indonesia,OCA,Asia,TRUE
+IRQ,Iraq,OCA,Asia,TRUE
+IRL,Ireland,EOC,Europe,TRUE
+IRI,Islamic Republic of Iran,OCA,Asia,TRUE
+ISR,Israel,EOC,Europe,TRUE
+ITA,Italy,EOC,Europe,TRUE
+JAM,Jamaica,PASO,America,TRUE
+JPN,Japan,OCA,Asia,TRUE
+JOR,Jordan,OCA,Asia,TRUE
+KAZ,Kazakhstan,OCA,Asia,TRUE
+KEN,Kenya,ANOCA,Africa,TRUE
+KSA,Kingdom of Saudi Arabia,OCA,Asia,TRUE
+KIR,Kiribati,ONOC,Oceania,TRUE
+COR,Korea Team,Not affiliated with any organization,No assigned continent,FALSE
+KOS,Kosovo,EOC,Europe,TRUE
+KUW,Kuwait,OCA,Asia,TRUE
+KGZ,Kyrgyzstan,OCA,Asia,TRUE
+LAO,Lao People's Democratic Republic,OCA,Asia,TRUE
+LAT,Latvia,EOC,Europe,TRUE
+LBN,Lebanon,OCA,Asia,TRUE
+LES,Lesotho,ANOCA,Africa,TRUE
+LBR,Liberia,ANOCA,Africa,TRUE
+LBA,Libya,ANOCA,Africa,TRUE
+LIE,Liechtenstein,EOC,Europe,TRUE
+LTU,Lithuania,EOC,Europe,TRUE
+LUX,Luxembourg,EOC,Europe,TRUE
+MAD,Madagascar,ANOCA,Africa,TRUE
+MAW,Malawi,ANOCA,Africa,TRUE
+MAL,Malaya,Not affiliated with any organization,No assigned continent,FALSE
+MAS,Malaysia,OCA,Asia,TRUE
+MDV,Maldives,OCA,Asia,TRUE
+MLI,Mali,ANOCA,Africa,TRUE
+MLT,Malta,EOC,Europe,TRUE
+MHL,Marshall Islands,ONOC,Oceania,TRUE
+MTN,Mauritania,ANOCA,Africa,TRUE
+MRI,Mauritius,ANOCA,Africa,TRUE
+MEX,Mexico,PASO,America,TRUE
+MIX,Mixed team,Not affiliated with any organization,No assigned continent,TRUE
+MON,Monaco,EOC,Europe,TRUE
+MGL,Mongolia,OCA,Asia,TRUE
+MNE,Montenegro,EOC,Europe,TRUE
+MAR,Morocco,ANOCA,Africa,TRUE
+MOZ,Mozambique,ANOCA,Africa,TRUE
+MYA,Myanmar,OCA,Asia,TRUE
+NAM,Namibia,ANOCA,Africa,TRUE
+NRU,Nauru,ONOC,Oceania,TRUE
+NEP,Nepal,OCA,Asia,TRUE
+NED,Netherlands,EOC,Europe,TRUE
+AHO,Netherlands Antilles,Not affiliated with any organization,No assigned continent,FALSE
+NZL,New Zealand,ONOC,Oceania,TRUE
+NFL,Newfoundland,Not affiliated with any organization,No assigned continent,FALSE
+NCA,Nicaragua,PASO,America,TRUE
+NIG,Niger,ANOCA,Africa,TRUE
+NGR,Nigeria,ANOCA,Africa,TRUE
+NBO,North Borneo,Not affiliated with any organization,No assigned continent,FALSE
+MKD,North Macedonia,EOC,Europe,TRUE
+YAR,North Yemen,Not affiliated with any organization,No assigned continent,FALSE
+NOR,Norway,EOC,Europe,TRUE
+OMA,Oman,OCA,Asia,TRUE
+PAK,Pakistan,OCA,Asia,TRUE
+PLW,Palau,ONOC,Oceania,TRUE
+PLE,Palestine,OCA,Asia,TRUE
+PAN,Panama,PASO,America,TRUE
+PNG,Papua New Guinea,ONOC,Oceania,TRUE
+PAR,Paraguay,PASO,America,TRUE
+CHN,People's Republic of China,OCA,Asia,TRUE
+PER,Peru,PASO,America,TRUE
+PHI,Philippines,OCA,Asia,TRUE
+POL,Poland,EOC,Europe,TRUE
+POR,Portugal,EOC,Europe,TRUE
+PUR,Puerto Rico,PASO,America,TRUE
+QAT,Qatar,OCA,Asia,TRUE
+EOR,Refugee Olympic Team,Not affiliated with any organization,No assigned continent,TRUE
+KOR,Republic of Korea,OCA,Asia,TRUE
+MDA,Republic of Moldova,EOC,Europe,TRUE
+RHO,Rhodesia,Not affiliated with any organization,No assigned continent,FALSE
+ROC,Russian Olympic Committee,Not affiliated with any organization,No assigned continent,TRUE
+ROU,Romania,EOC,Europe,TRUE
+RUS,Russian Federation,EOC,Europe,FALSE
+RWA,Rwanda,ANOCA,Africa,TRUE
+SAA,Saar,Not affiliated with any organization,No assigned continent,FALSE
+SKN,Saint Kitts and Nevis,PASO,America,TRUE
+LCA,Saint Lucia,PASO,America,TRUE
+VIN,Saint Vincent and the Grenadines,PASO,America,TRUE
+SAM,Samoa,ONOC,Oceania,TRUE
+SMR,San Marino,EOC,Europe,TRUE
+STP,São Tomé and Príncipe,ANOCA,Africa,TRUE
+SEN,Senegal,ANOCA,Africa,TRUE
+SRB,Serbia,EOC,Europe,TRUE
+SCG,Serbia and Montenegro,Not affiliated with any organization,No assigned continent,FALSE
+SEY,Seychelles,ANOCA,Africa,TRUE
+SLE,Sierra Leone,ANOCA,Africa,TRUE
+SGP,Singapore,OCA,Asia,TRUE
+SVK,Slovakia,EOC,Europe,TRUE
+SLO,Slovenia,EOC,Europe,TRUE
+SOL,Solomon Islands,ONOC,Oceania,TRUE
+SOM,Somalia,ANOCA,Africa,TRUE
+RSA,South Africa,ANOCA,Africa,TRUE
+SSD,South Sudan,ANOCA,Africa,TRUE
+VNM,South Vietnam,Not affiliated with any organization,No assigned continent,FALSE
+YMD,South Yemen,Not affiliated with any organization,No assigned continent,FALSE
+URS,Soviet Union,Not affiliated with any organization,No assigned continent,FALSE
+ESP,Spain,EOC,Europe,TRUE
+SRI,Sri Lanka,OCA,Asia,TRUE
+SUD,Sudan,ANOCA,Africa,TRUE
+SUR,Suriname,PASO,America,TRUE
+SWE,Sweden,EOC,Europe,TRUE
+SUI,Switzerland,EOC,Europe,TRUE
+SYR,Syrian Arab Republic,OCA,Asia,TRUE
+TJK,Tajikistan,OCA,Asia,TRUE
+THA,Thailand,OCA,Asia,TRUE
+BAH,The Bahamas,PASO,America,TRUE
+GAM,The Gambia,ANOCA,Africa,TRUE
+TLS,Timor-Leste,OCA,Asia,TRUE
+TOG,Togo,ANOCA,Africa,TRUE
+TGA,Tonga,ONOC,Oceania,TRUE
+TTO,Trinidad and Tobago,PASO,America,TRUE
+TUN,Tunisia,ANOCA,Africa,TRUE
+TUR,Türkiye,EOC,Europe,TRUE
+TKM,Turkmenistan,OCA,Asia,TRUE
+TUV,Tuvalu,ONOC,Oceania,TRUE
+UGA,Uganda,ANOCA,Africa,TRUE
+UKR,Ukraine,EOC,Europe,TRUE
+EUN,Unified Team,Not affiliated with any organization,No assigned continent,FALSE
+UAE,United Arab Emirates,OCA,Asia,TRUE
+UAR,United Arab Republic,OCA,Asia,TRUE
+TAN,United Republic of Tanzania,ANOCA,Africa,TRUE
+USA,United States,PASO,America,TRUE
+ISV,United States Virgin Islands,PASO,America,TRUE
+UNK,Unknown,Not affiliated with any organization,No assigned continent,TRUE
+URU,Uruguay,PASO,America,FALSE
+UZB,Uzbekistan,OCA,Asia,TRUE
+VAN,Vanuatu,ONOC,Oceania,TRUE
+VEN,Venezuela,PASO,America,TRUE
+VIE,Vietnam,OCA,Asia,TRUE
+FRG,West Germany,Not affiliated with any organization,No assigned continent,FALSE
+WIF,West Indies Federation,Not affiliated with any organization,No assigned continent,FALSE
+YEM,Yemen,OCA,Asia,TRUE
+YUG,Yugoslavia,Not affiliated with any organization,No assigned continent,FALSE
+ZAM,Zambia,ANOCA,Africa,TRUE
+ZIM,Zimbabwe,ANOCA,Africa,TRUE

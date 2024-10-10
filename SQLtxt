@@ -1,0 +1,136 @@
+
+create table dim_olympic_medal_results (
+    sk_medal_result number,
+    result_medal VARCHAR2(15),
+    result_format VARCHAR2(15)
+);
+
+ALTER TABLE dim_olympic_medal_results ADD CONSTRAINT dim_medal_result_pk PRIMARY KEY (sk_medal_result) RELY;
+ALTER TABLE dim_olympic_medal_results ADD CONSTRAINT dim_medal_result_uk UNIQUE ("Medal Result Code");
+
+create SEQUENCE OLYMPIC_MEDAL_RESULTS_SEQ
+  START WITH 1 
+  INCREMENT BY 1 
+  CACHE 10
+  NOCYCLE;
+================================================================================================
+create table dim_olympic_events(
+    su_event number,
+    event_id number,
+    event_title varchar2(3000),
+    event_sport varchar2(3000),
+    event_date varchar2(3000),
+    event_location varchar2(3000),
+    event_participants varchar2(3000),
+    event_format varchar2(3000),
+    event_detail varchar2(3000)
+);
+
+ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_events_pk PRIMARY KEY (su_event) RELY;
+ALTER TABLE dim_olympic_events ADD CONSTRAINT dim_events_uk UNIQUE ("Event Code");
+
+create SEQUENCE OLYMPIC_EVENTS_SEQ 
+  START WITH 1 
+  INCREMENT BY 1 
+  CACHE 10
+  NOCYCLE;
+============================================================================
+create table dim_olympic_athlete_bio(
+    su_athlete number,
+    athlete_id number,
+    athlete_name varchar2(3000),
+    athlete_sex varchar2(50),
+    athlete_born varchar2(3000),
+    athlete_height number,
+    athlete_weight varchar2(3000),
+    date_from date,
+    date_to date,
+    version number
+);
+
+ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_athlete_pk PRIMARY KEY (su_athlete) RELY;
+ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_athlete_uk UNIQUE ("Athlete Code");
+
+CREATE SEQUENCE OLYMPIC_ATHLETE_BIO_SEQ
+  START WITH 1 
+  INCREMENT BY 1 
+  CACHE 10
+  NOCYCLE;
+================================================
+create table dim_olympic_nocs(
+    su_noc number,
+    noc_code varchar2(50),
+    anoc_code varchar2(50),
+    country_name varchar2(300),
+    continent_name varchar2(300),
+    is_active varchar2(50),
+    date_from date,
+    date_to date,
+    version number
+);
+
+ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_nocs_pk PRIMARY KEY (su_noc) RELY;
+ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_nocs_uk UNIQUE ("Noc Code");
+
+CREATE SEQUENCE OLYMPIC_NOCS_SEQ
+  START WITH 1 
+  INCREMENT BY 1 
+  CACHE 10
+  NOCYCLE;
+  
+======Facts========================================
+
+create table fact_athlete_event_results(
+    fk_event number constraint event_nn not null,
+    fk_edition number constraint edition_nn not null,
+    fk_result number constraint result_nn not null,
+    fk_athlete number constraint athlete_nn not null,
+    fk_noc number constraint noc_nn not null
+);
+
+alter table fact_athlete_event_results
+add constraint fact_aev_dim_olympic_events_fk
+foreign key(fk_event)
+references dim_olympic_events
+rely disable novalidate;
+
+alter table fact_athlete_event_results
+add constraint fact_aev_dim_olympic_games_fk
+foreign key(fk_edition)
+references dim_olympic_games
+rely disable novalidate;
+
+alter table fact_athlete_event_results
+add constraint fact_aev_dim_olympic_result_fk
+foreign key(fk_result)
+references dim_medal_result
+rely disable novalidate;
+
+alter table fact_athlete_event_results
+add constraint fact_aev_dim_olympic_athlete_bio_fk
+foreign key(fk_athlete)
+references dim_olympic_athlete_bio
+rely disable novalidate;
+
+alter table fact_athlete_event_results
+add constraint fact_aev_dim_olympic_nocs_fk
+foreign key(fk_noc)
+references dim_olympic_nocs
+rely disable novalidate;
+
+====BitMaps====
+
+create bitmap index fact_athlete_event_results_fk_event_idx_bm 
+on fact_athlete_event_results(fk_event)
+
+create bitmap index fact_athlete_event_results_fk_edition_idx_bm 
+on fact_athlete_event_results(fk_edition)
+
+create bitmap index fact_athlete_event_results_fk_medal_result_idx_bm 
+on fact_athlete_event_results(fk_result)
+
+create bitmap index fact_athlete_event_results_fk_athlete_idx_bm 
+on fact_athlete_event_results(fk_athlete)
+
+create bitmap index fact_athlete_event_results_fk_noc_idx_bm 
+on fact_athlete_event_results(fk_noc)
