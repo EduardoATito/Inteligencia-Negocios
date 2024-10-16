@@ -22,17 +22,17 @@
   <order>
     <hop>
       <from>Olympic Noc Dataset</from>
-      <to>Sort rows</to>
+      <to>Ordenando por AZ El codigo Noc</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows</from>
-      <to>Dimension lookup/update</to>
+      <from>Ordenando por AZ El codigo Noc</from>
+      <to>Dimension lookup/update de la dim ONocs</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>Dimension lookup/update</name>
+    <name>Dimension lookup/update de la dim ONocs</name>
     <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -42,24 +42,23 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <cache_size>5000</cache_size>
+    <cache_size>-1</cache_size>
     <commit>260</commit>
     <connection>oracle_olimpiadas</connection>
     <fields>
       <date>
         <from>DATE_FROM</from>
-        <name/>
         <to>DATE_TO</to>
       </date>
+      <field>
+        <lookup>COUNTRY_NAME</lookup>
+        <name>country</name>
+        <update>Insert</update>
+      </field>
       <field>
         <lookup>ANOC_CODE</lookup>
         <name>anoc</name>
         <update>Insert</update>
-      </field>
-      <field>
-        <lookup>COUNTRY_NAME</lookup>
-        <name>country</name>
-        <update>Update</update>
       </field>
       <field>
         <lookup>CONTINENT_NAME</lookup>
@@ -78,7 +77,6 @@
       <return>
         <creation_method>sequence</creation_method>
         <name>SU_NOC</name>
-        <rename/>
         <version>VERSION</version>
       </return>
     </fields>
@@ -87,15 +85,14 @@
     <preload_cache>N</preload_cache>
     <schema>IN2024_OLIMPIADAS</schema>
     <sequence>OLYMPIC_NOCS_SEQ</sequence>
-    <start_date_field_name/>
     <table>dim_olympic_nocs</table>
     <update>Y</update>
     <useBatch>N</useBatch>
     <use_start_date_alternative>N</use_start_date_alternative>
     <attributes/>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>288</yloc>
+      <xloc>864</xloc>
+      <yloc>384</yloc>
     </GUI>
   </transform>
   <transform>
@@ -109,7 +106,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Escritorio/I.N/Olympic Dataset/Olympics_Country.csv</filename>
+    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympics_Country.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -131,7 +128,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>3</length>
+        <length>50</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -142,7 +139,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>37</length>
+        <length>300</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -153,7 +150,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>36</length>
+        <length>50</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -164,7 +161,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>22</length>
+        <length>300</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -175,7 +172,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>-1</length>
+        <length>50</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -183,11 +180,11 @@
     <attributes/>
     <GUI>
       <xloc>432</xloc>
-      <yloc>288</yloc>
+      <yloc>384</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Sort rows</name>
+    <name>Ordenando por AZ El codigo Noc</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -206,7 +203,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>noc</name>
+        <name>country</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -216,8 +213,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>288</yloc>
+      <xloc>640</xloc>
+      <yloc>192</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

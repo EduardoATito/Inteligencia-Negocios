@@ -22,15 +22,79 @@
   <order>
     <hop>
       <from>Olympic Events Dataset</from>
-      <to>anadiendo seq de la bd</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>anadiendo seq de la bd</from>
-      <to>Table output</to>
+      <to>Actualizar o Insert Dim OEvents</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <transform>
+    <name>Actualizar o Insert Dim OEvents</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>100</commit>
+    <connection>oracle_olimpiadas</connection>
+    <lookup>
+      <key>
+        <condition>=</condition>
+        <field>EVENT_ID</field>
+        <name>result_id</name>
+      </key>
+      <schema>IN2024_OLIMPIADAS</schema>
+      <table>dim_olympic_events</table>
+      <value>
+        <name>EVENT_ID</name>
+        <rename>result_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_TITLE</name>
+        <rename>event_title</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_SPORT</name>
+        <rename>sport</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_DATE</name>
+        <rename>result_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_LOCATION</name>
+        <rename>result_location</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_PARTICIPANTS</name>
+        <rename>result_participants</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_FORMAT</name>
+        <rename>result_format</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EVENT_DETAIL</name>
+        <rename>result_detail</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <update_bypassed>N</update_bypassed>
+    <attributes/>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
   <transform>
     <name>Olympic Events Dataset</name>
     <type>CSVInput</type>
@@ -42,7 +106,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Escritorio/I.N/Olympic Dataset/Olympic_Event_Results.csv</filename>
+    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympic_Event_Results.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -59,13 +123,13 @@
     <fields>
       <field>
         <name>result_id</name>
-        <type>String</type>
-        <format/>
+        <type>Integer</type>
+        <format>#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>462</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -75,7 +139,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>261</length>
+        <length>54</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -86,19 +150,19 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>294</length>
+        <length>20</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>edition_id</name>
-        <type>String</type>
-        <format/>
+        <type>Integer</type>
+        <format>#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>278</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -108,7 +172,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>254</length>
+        <length>20</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -119,7 +183,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>152</length>
+        <length>23</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -130,7 +194,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>199</length>
+        <length>43</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -141,7 +205,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>178</length>
+        <length>84</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -152,7 +216,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>159</length>
+        <length>21</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -163,7 +227,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>260</length>
+        <length>835</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -179,120 +243,43 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>result_description</name>
-        <type>String</type>
+        <name>EmptyField_011</name>
+        <type>Boolean</type>
         <format/>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>1763</length>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>EmptyField_012</name>
+        <type>Boolean</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>EmptyField_013</name>
+        <type>Boolean</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>256</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>anadiendo seq de la bd</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>oracle_olimpiadas</connection>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <schema>IN2024_OLIMPIADAS</schema>
-    <seqname>OLYMPIC_EVENTS_SEQ</seqname>
-    <start_at>1</start_at>
-    <use_counter>N</use_counter>
-    <use_database>Y</use_database>
-    <valuename>sk_event</valuename>
-    <attributes/>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>384</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Table output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <commit>1000</commit>
-    <connection>oracle_olimpiadas</connection>
-    <fields>
-      <field>
-        <column_name>SU_EVENT</column_name>
-        <stream_name>sk_event</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_ID</column_name>
-        <stream_name>result_id</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_TITLE</column_name>
-        <stream_name>event_title</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_SPORT</column_name>
-        <stream_name>sport</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_DATE</column_name>
-        <stream_name>result_date</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_LOCATION</column_name>
-        <stream_name>result_location</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_PARTICIPANTS</column_name>
-        <stream_name>result_participants</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_FORMAT</column_name>
-        <stream_name>result_format</stream_name>
-      </field>
-      <field>
-        <column_name>EVENT_DETAIL</column_name>
-        <stream_name>result_detail</stream_name>
-      </field>
-    </fields>
-    <ignore_errors>N</ignore_errors>
-    <only_when_have_rows>N</only_when_have_rows>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <return_field/>
-    <return_keys>N</return_keys>
-    <schema/>
-    <specify_fields>Y</specify_fields>
-    <table>DIM_OLYMPIC_EVENTS</table>
-    <tablename_field/>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_in_table>Y</tablename_in_table>
-    <truncate>Y</truncate>
-    <use_batch>Y</use_batch>
-    <attributes/>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>240</yloc>
+      <xloc>464</xloc>
+      <yloc>304</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

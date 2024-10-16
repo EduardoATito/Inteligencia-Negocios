@@ -21,44 +21,13 @@
   </notepads>
   <order>
     <hop>
-      <from>Data grid</from>
-      <to>Anadieron secuencia de la bd</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Anadieron secuencia de la bd</from>
-      <to>Table output</to>
+      <from>Posibles resultados para las medallas</from>
+      <to>Tabla Estatica para la dim OMedalResults</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>Anadieron secuencia de la bd</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>oracle_olimpiadas</connection>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <schema>IN2024_OLIMPIADAS</schema>
-    <seqname>OLYMPIC_MEDAL_RESULTS_SEQ</seqname>
-    <start_at>1</start_at>
-    <use_counter>N</use_counter>
-    <use_database>Y</use_database>
-    <valuename>sk_medal_result</valuename>
-    <attributes/>
-    <GUI>
-      <xloc>480</xloc>
-      <yloc>112</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Data grid</name>
+    <name>Posibles resultados para las medallas</name>
     <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
@@ -94,11 +63,11 @@
         <item>Team</item>
       </line>
       <line>
-        <item>No medal</item>
+        <item>No Medal</item>
         <item>Individual</item>
       </line>
       <line>
-        <item>No medal</item>
+        <item>No Medal</item>
         <item>Team</item>
       </line>
     </data>
@@ -106,8 +75,10 @@
       <field>
         <length>-1</length>
         <precision>-1</precision>
+        <currency/>
         <set_empty_string>N</set_empty_string>
-        <name>result_medal</name>
+        <name>medal_result</name>
+        <format/>
         <group>.</group>
         <decimal>,</decimal>
         <type>String</type>
@@ -115,8 +86,10 @@
       <field>
         <length>-1</length>
         <precision>-1</precision>
+        <currency/>
         <set_empty_string>N</set_empty_string>
-        <name>result_format</name>
+        <name>format_result</name>
+        <format/>
         <group>.</group>
         <decimal>,</decimal>
         <type>String</type>
@@ -124,12 +97,12 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>224</yloc>
+      <xloc>320</xloc>
+      <yloc>240</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Table output</name>
+    <name>Tabla Estatica para la dim OMedalResults</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -139,20 +112,16 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <commit>1000</commit>
+    <commit>100</commit>
     <connection>oracle_olimpiadas</connection>
     <fields>
       <field>
-        <column_name>SK_MEDAL_RESULT</column_name>
-        <stream_name>sk_medal_result</stream_name>
+        <column_name>FORMAT_RESULT</column_name>
+        <stream_name>format_result</stream_name>
       </field>
       <field>
-        <column_name>RESULT_MEDAL</column_name>
-        <stream_name>result_medal</stream_name>
-      </field>
-      <field>
-        <column_name>RESULT_FORMAT</column_name>
-        <stream_name>result_format</stream_name>
+        <column_name>MEDAL_RESULT</column_name>
+        <stream_name>medal_result</stream_name>
       </field>
     </fields>
     <ignore_errors>N</ignore_errors>
@@ -163,14 +132,15 @@
     <return_keys>N</return_keys>
     <schema>IN2024_OLIMPIADAS</schema>
     <specify_fields>Y</specify_fields>
-    <table>DIM_MEDAL_RESULTS</table>
+    <table>dim_olympic_medal_results</table>
+    <tablename_field>result_medal</tablename_field>
     <tablename_in_field>N</tablename_in_field>
     <tablename_in_table>Y</tablename_in_table>
     <truncate>N</truncate>
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>704</xloc>
+      <xloc>720</xloc>
       <yloc>224</yloc>
     </GUI>
   </transform>

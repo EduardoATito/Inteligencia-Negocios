@@ -42,23 +42,18 @@
     </hop>
     <hop>
       <from>is_held</from>
-      <to>Ordenado por agno</to>
+      <to>Ordenado por año</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ordenado por agno</from>
-      <to>Anadir Seq de la BD</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Anadir Seq de la BD</from>
-      <to>Poblamiento</to>
+      <from>Ordenado por año</from>
+      <to>Actualiza o Insertar de la Dim OGames</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>Anadir Seq de la BD</name>
-    <type>Sequence</type>
+    <name>Actualiza o Insertar de la Dim OGames</name>
+    <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -67,19 +62,68 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <commit>100</commit>
     <connection>oracle_olimpiadas</connection>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <schema>IN2024_OLIMPIADAS</schema>
-    <seqname>OLYMPIC_GAMES_SEQ</seqname>
-    <start_at>1</start_at>
-    <use_counter>N</use_counter>
-    <use_database>Y</use_database>
-    <valuename>sk_edition</valuename>
+    <lookup>
+      <key>
+        <condition>=</condition>
+        <field>EDITION_ID</field>
+        <name>edition_id</name>
+        <name2/>
+      </key>
+      <schema>IN2024_OLIMPIADAS</schema>
+      <table>dim_olympic_games</table>
+      <value>
+        <name>EDITION_ID</name>
+        <rename>edition_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_NAME</name>
+        <rename>edition</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_YEAR</name>
+        <rename>year</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_COUNTRY_NOC</name>
+        <rename>country_noc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_START_DATE</name>
+        <rename>start_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_END_DATE</name>
+        <rename>end_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_COMPETITION_DATE</name>
+        <rename>competition_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_IS_HELD</name>
+        <rename>isHeld</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EDITION_CITY</name>
+        <rename>city</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <update_bypassed>N</update_bypassed>
     <attributes/>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>224</yloc>
+      <xloc>944</xloc>
+      <yloc>208</yloc>
     </GUI>
   </transform>
   <transform>
@@ -117,7 +161,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Escritorio/I.N/Olympic Dataset/Olympic_Games_Summary.csv</filename>
+    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympic_Games_Summary.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -261,7 +305,7 @@
     </GUI>
   </transform>
   <transform>
-    <name>Ordenado por agno</name>
+    <name>Ordenado por año</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -292,80 +336,6 @@
     <GUI>
       <xloc>752</xloc>
       <yloc>80</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Poblamiento</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <commit>1000</commit>
-    <connection>oracle_olimpiadas</connection>
-    <fields>
-      <field>
-        <column_name>SU_EDITION</column_name>
-        <stream_name>sk_edition</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_ID</column_name>
-        <stream_name>edition_id</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_NAME</column_name>
-        <stream_name>edition</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_YEAR</column_name>
-        <stream_name>year</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_CITY</column_name>
-        <stream_name>city</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_START_DATE</column_name>
-        <stream_name>start_date</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_END_DATE</column_name>
-        <stream_name>end_date</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_COMPETITION_DATE</column_name>
-        <stream_name>competition_date</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_COUNTRY_NOC</column_name>
-        <stream_name>country_noc</stream_name>
-      </field>
-      <field>
-        <column_name>EDITION_IS_HELD</column_name>
-        <stream_name>isHeld</stream_name>
-      </field>
-    </fields>
-    <ignore_errors>N</ignore_errors>
-    <only_when_have_rows>N</only_when_have_rows>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <return_keys>N</return_keys>
-    <schema>IN2024_OLIMPIADAS</schema>
-    <specify_fields>Y</specify_fields>
-    <table>DIM_OLYMPIC_GAMES</table>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_in_table>Y</tablename_in_table>
-    <truncate>Y</truncate>
-    <use_batch>Y</use_batch>
-    <attributes/>
-    <GUI>
-      <xloc>992</xloc>
-      <yloc>96</yloc>
     </GUI>
   </transform>
   <transform>

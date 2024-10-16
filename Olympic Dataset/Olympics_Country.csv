@@ -59,7 +59,7 @@ DEN,Denmark,EOC,Europe,TRUE
 DJI,Djibouti,ANOCA,Africa,TRUE
 DMA,Dominica,PASO,America,TRUE
 DOM,Dominican Republic,PASO,America,TRUE
-GDR,East Germany,No pertenece a ninguno,No pertenece a ninguno,FALSE
+GDR,East Germany,Not affiliated with any organization,No assigned continent,FALSE
 ECU,Ecuador,PASO,America,TRUE
 EGY,Egypt,ANOCA,Africa,TRUE
 ESA,El Salvador,PASO,America,TRUE
@@ -222,7 +222,7 @@ TAN,United Republic of Tanzania,ANOCA,Africa,TRUE
 USA,United States,PASO,America,TRUE
 ISV,United States Virgin Islands,PASO,America,TRUE
 UNK,Unknown,Not affiliated with any organization,No assigned continent,TRUE
-URU,Uruguay,PASO,America,FALSE
+URU,Uruguay,PASO,America,TRUE
 UZB,Uzbekistan,OCA,Asia,TRUE
 VAN,Vanuatu,ONOC,Oceania,TRUE
 VEN,Venezuela,PASO,America,TRUE
