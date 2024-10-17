@@ -43,6 +43,7 @@
     <fields>
       <date>
         <from>DATE_FROM</from>
+        <name/>
         <to>DATE_TO</to>
       </date>
       <field>
@@ -77,6 +78,7 @@
       <return>
         <creation_method>sequence</creation_method>
         <name>SU_ATHLETE</name>
+        <rename/>
         <version>VERSION</version>
       </return>
     </fields>
@@ -85,6 +87,7 @@
     <preload_cache>N</preload_cache>
     <schema>IN2024_OLIMPIADAS</schema>
     <sequence>OLYMPIC_ATHLETE_BIO_SEQ</sequence>
+    <start_date_field_name/>
     <table>dim_olympic_athlete_bio</table>
     <update>Y</update>
     <useBatch>N</useBatch>
