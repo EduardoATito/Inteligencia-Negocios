@@ -389,11 +389,13 @@
         <condition>=</condition>
         <field>ATHLETE_ID</field>
         <name>athlete_id</name>
+        <name2/>
       </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_athlete_bio</table>
       <value>
-        <default>99999999</default>
+        <default>155881</default>
         <name>SU_ATHLETE</name>
         <rename>fk_athlete</rename>
         <trim_type>none</trim_type>
@@ -428,11 +430,13 @@
         <condition>=</condition>
         <field>EVENT_ID</field>
         <name>event_id</name>
+        <name2/>
       </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_events</table>
       <value>
-        <default>99999999</default>
+        <default>7395</default>
         <name>SU_EVENT</name>
         <rename>fk_event</rename>
         <trim_type>none</trim_type>

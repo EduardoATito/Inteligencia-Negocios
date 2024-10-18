@@ -145,3 +145,14 @@ on fact_athlete_event_results(fk_athlete)
 
 create bitmap index fact_athlete_event_results_fk_noc_idx_bm 
 on fact_athlete_event_results(fk_noc)
+
+================================================
+
+create table fact_olympic_medal_tally(
+    fk_edition number constraint medal_tally_edition_nn not null,
+    fk_noc number constraint medal_tally_noc_nn not null,
+    gold number,
+    silver number,
+    bronze number,
+    total number
+);
