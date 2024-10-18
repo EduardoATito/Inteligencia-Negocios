@@ -12,7 +12,7 @@ create table dim_olympic_games(
 );
 
 ALTER TABLE dim_olympic_games ADD CONSTRAINT dim_olympic_games_pk PRIMARY KEY (su_edition) RELY;
-ALTER TABLE dim_olympic_games ADD CONSTRAINT dim_olympic_games_uk UNIQUE ('Edition Code');
+ALTER TABLE dim_olympic_games ADD CONSTRAINT dim_olympic_games_uk UNIQUE (edition_id);
 
 ================================================================================================
 
@@ -40,7 +40,7 @@ create table dim_olympic_events(
 );
 
 ALTER TABLE dim_olympic_events ADD CONSTRAINT dim_olympic_events_pk PRIMARY KEY (su_event) RELY;
-ALTER TABLE dim_olympic_events ADD CONSTRAINT dim_olympic_events_uk UNIQUE ("Event Code");
+ALTER TABLE dim_olympic_events ADD CONSTRAINT dim_olympic_events_uk UNIQUE (event_id);
 
 ============================================================================
 
@@ -58,7 +58,7 @@ create table dim_olympic_athlete_bio(
 );
 
 ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_olympic_athlete_bio_pk PRIMARY KEY (su_athlete) RELY;
-ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_olympic_athlete_bio_uk UNIQUE ("Athlete Code");
+ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_olympic_athlete_bio_uk UNIQUE (athlete_id);
 
 CREATE SEQUENCE OLYMPIC_ATHLETE_BIO_SEQ
   START WITH 1 
@@ -81,7 +81,7 @@ create table dim_olympic_nocs(
 );
 
 ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_olympic_nocs_pk PRIMARY KEY (su_noc) RELY;
-ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_olympic_nocs_uk UNIQUE ("Noc Code");
+ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_olympic_nocs_uk UNIQUE (noc_code);
 
 CREATE SEQUENCE OLYMPIC_NOCS_SEQ
   START WITH 1 
