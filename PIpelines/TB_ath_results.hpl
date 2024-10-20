@@ -428,9 +428,7 @@
         <condition>=</condition>
         <field>EVENT_ID</field>
         <name>event_id</name>
-        <name2/>
       </key>
-      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_events</table>
       <value>
@@ -469,10 +467,13 @@
         <condition>=</condition>
         <field>EDITION_ID</field>
         <name>edition_id</name>
+        <name2/>
       </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_games</table>
       <value>
+        <default/>
         <name>SU_EDITION</name>
         <rename>fk_edition</rename>
         <trim_type>none</trim_type>
@@ -507,16 +508,20 @@
         <condition>LIKE</condition>
         <field>FORMAT_RESULT</field>
         <name>format_result</name>
+        <name2/>
       </key>
       <key>
         <condition>LIKE</condition>
         <field>MEDAL_RESULT</field>
         <name>medal_result</name>
+        <name2/>
       </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_medal_results</table>
       <value>
-        <name>SK_RESULT</name>
+        <default/>
+        <name>SU_RESULT</name>
         <rename>fk_result</rename>
         <trim_type>none</trim_type>
         <type>Integer</type>
