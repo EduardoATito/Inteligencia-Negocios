@@ -156,3 +156,22 @@ create table fact_olympic_medal_tally(
     bronze number,
     total number
 );
+
+alter table fact_olympic_medal_tally
+add constraint fact_mtally_dim_olympic_games_fk
+foreign key(fk_edition)
+references dim_olympic_games
+rely disable novalidate;
+
+alter table fact_olympic_medal_tally
+add constraint fact_mtally_dim_olympic_nocs_fk
+foreign key(fk_noc)
+references dim_olympic_nocs
+rely disable novalidate;
+
+-------------Bitmaps------
+create bitmap index fact_olympic_medal_tally_fk_edition_idx_bm 
+on fact_olympic_medal_tally(fk_edition);
+
+create bitmap index fact_olympic_medal_tally_fk_noc_idx_bm 
+on fact_olympic_medal_tally(fk_noc);
