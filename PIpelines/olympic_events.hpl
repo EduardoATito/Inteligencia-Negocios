@@ -44,6 +44,7 @@
         <condition>=</condition>
         <field>EVENT_ID</field>
         <name>result_id</name>
+        <name2/>
       </key>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_events</table>
@@ -106,7 +107,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympic_Event_Results.csv</filename>
+    <filename>C:\Users\eduar\Dev\Inteligencia-Negocios\Olympic Dataset\Olympic_Event_Results.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -119,7 +120,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>result_id</name>

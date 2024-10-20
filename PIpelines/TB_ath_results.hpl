@@ -428,7 +428,9 @@
         <condition>=</condition>
         <field>EVENT_ID</field>
         <name>event_id</name>
+        <name2/>
       </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_events</table>
       <value>
@@ -467,13 +469,10 @@
         <condition>=</condition>
         <field>EDITION_ID</field>
         <name>edition_id</name>
-        <name2/>
       </key>
-      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_games</table>
       <value>
-        <default/>
         <name>SU_EDITION</name>
         <rename>fk_edition</rename>
         <trim_type>none</trim_type>

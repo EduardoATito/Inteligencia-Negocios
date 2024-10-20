@@ -21,23 +21,23 @@
   </notepads>
   <order>
     <hop>
-      <from>Regex evaluation</from>
-      <to>Regex evaluation 2</to>
+      <from>Ver si cumple con DD MM YY</from>
+      <to>Diferenciar is_year_born</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Diferenciar is_year_born</from>
+      <to>Ver year_born</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ver year_born</from>
+      <to>Dimension lookup/update de la dim OAthleteBio</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Olympic Athlete Bio Dataset</from>
-      <to>Regex evaluation</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Formula</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Regex evaluation 2</from>
-      <to>Formula</to>
+      <to>Ver si cumple con DD MM YY</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -85,6 +85,11 @@
         <name>weight</name>
         <update>Insert</update>
       </field>
+      <field>
+        <lookup>ATHLETE_YEAR_BORN</lookup>
+        <name>year_born</name>
+        <update>Punch through</update>
+      </field>
       <key>
         <lookup>ATHLETE_ID</lookup>
         <name>athlete_id</name>
@@ -106,68 +111,12 @@
     <use_start_date_alternative>N</use_start_date_alternative>
     <attributes/>
     <GUI>
-      <xloc>736</xloc>
-      <yloc>368</yloc>
+      <xloc>1152</xloc>
+      <yloc>640</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>File exists</name>
-    <type>FileExists</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <addresultfilenames>N</addresultfilenames>
-    <includefiletype>N</includefiletype>
-    <resultfieldname>result</resultfieldname>
-    <attributes/>
-    <GUI>
-      <xloc>960</xloc>
-      <yloc>592</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compare>
-      <condition>
-        <conditions>
-</conditions>
-        <function>=</function>
-        <leftvalue>athlete_id</leftvalue>
-        <negated>N</negated>
-        <operator>-</operator>
-        <value>
-          <isnull>N</isnull>
-          <length>-1</length>
-          <mask>####0;-####0</mask>
-          <name>constant</name>
-          <precision>0</precision>
-          <text>15895</text>
-          <type>Integer</type>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <GUI>
-      <xloc>1104</xloc>
-      <yloc>736</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Formula</name>
+    <name>Diferenciar is_year_born</name>
     <type>Formula</type>
     <description/>
     <distribute>Y</distribute>
@@ -181,24 +130,20 @@
       <formula>
         <field_name>year_born</field_name>
         <formula>IF(
-	[xxxx] = true,
-	[born],
-	IF (
-		[parse]= true,
-		right([born],4),
-		""
-	)
+	[is_year_born]= true,
+	right([born],4),
+	0
 )</formula>
         <replace_field/>
         <value_length>-1</value_length>
         <value_precision>-1</value_precision>
-        <value_type>2</value_type>
+        <value_type>5</value_type>
       </formula>
     </formulas>
     <attributes/>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>768</yloc>
+      <xloc>784</xloc>
+      <yloc>624</yloc>
     </GUI>
   </transform>
   <transform>
@@ -212,7 +157,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympic_Athlete_Biography.csv</filename>
+    <filename>C:\Users\eduar\Dev\Inteligencia-Negocios\Olympic Dataset\Olympic_Athlete_Biography.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -225,7 +170,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>athlete_id</name>
@@ -322,7 +267,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>2198</length>
+        <length>2206</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -333,51 +278,19 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>649</length>
+        <length>661</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>688</yloc>
+      <xloc>384</xloc>
+      <yloc>624</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Regex evaluation</name>
-    <type>RegexEval</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <script>^[0-9]{4}$</script>
-    <matcher>born</matcher>
-    <resultfieldname>xxxx</resultfieldname>
-    <usevar>N</usevar>
-    <allowcapturegroups>N</allowcapturegroups>
-    <replacefields>Y</replacefields>
-    <canoneq>N</canoneq>
-    <caseinsensitive>N</caseinsensitive>
-    <comment>N</comment>
-    <dotall>N</dotall>
-    <multiline>N</multiline>
-    <unicode>N</unicode>
-    <unix>N</unix>
-    <fields>
-    </fields>
-    <attributes/>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>512</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Regex evaluation 2</name>
+    <name>Ver si cumple con DD MM YY</name>
     <type>RegexEval</type>
     <description/>
     <distribute>N</distribute>
@@ -387,9 +300,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <script>.*\d+\)?$</script>
+    <script>.*\d+$</script>
     <matcher>born</matcher>
-    <resultfieldname>number_with_parenthesis</resultfieldname>
+    <resultfieldname>is_year_born</resultfieldname>
     <usevar>N</usevar>
     <allowcapturegroups>N</allowcapturegroups>
     <replacefields>Y</replacefields>
@@ -404,13 +317,13 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>512</yloc>
+      <xloc>544</xloc>
+      <yloc>448</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
+    <name>Ver year_born</name>
+    <type>NullIf</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -420,11 +333,15 @@
       <schema_name/>
     </partitioning>
     <fields>
-</fields>
+      <field>
+        <name>year_born</name>
+        <value>0</value>
+      </field>
+    </fields>
     <attributes/>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>928</yloc>
+      <xloc>976</xloc>
+      <yloc>448</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

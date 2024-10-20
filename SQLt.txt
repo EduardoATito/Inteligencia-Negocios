@@ -50,6 +50,7 @@ create table dim_olympic_athlete_bio(
     athlete_name varchar2(3000),
     athlete_sex varchar2(50),
     athlete_born varchar2(3000),
+    athlete_year_born number,
     athlete_height number,
     athlete_weight varchar2(3000),
     date_from date,
