@@ -17,13 +17,12 @@ ALTER TABLE dim_olympic_games ADD CONSTRAINT dim_olympic_games_uk UNIQUE (editio
 ================================================================================================
 
 create table dim_olympic_medal_results(
-    sk_result number generated always as identity,
+    su_result number generated always as identity,
     medal_result VARCHAR2(15),
     format_result VARCHAR2(15)
 );
 
-ALTER TABLE dim_olympic_medal_results ADD CONSTRAINT dim_medal_results_pk PRIMARY KEY (sk_result) RELY;
-ALTER TABLE dim_olympic_medal_results ADD CONSTRAINT dim_medal_results_uk UNIQUE ("Medal Result Code");
+ALTER TABLE dim_olympic_medal_results ADD CONSTRAINT dim_medal_results_pk PRIMARY KEY (su_result) RELY;
 
 ================================================================================================
 
