@@ -42,6 +42,37 @@
     </hop>
   </order>
   <transform>
+    <name>Diferenciar is_year_born</name>
+    <type>Formula</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <formulas>
+      <formula>
+        <field_name>year_born</field_name>
+        <formula>IF(
+	[is_year_born]= true,
+	right([born],4),
+	0
+)</formula>
+        <replace_field/>
+        <value_length>-1</value_length>
+        <value_precision>-1</value_precision>
+        <value_type>5</value_type>
+      </formula>
+    </formulas>
+    <attributes/>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>624</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Dimension lookup/update de la dim OAthleteBio</name>
     <type>DimensionLookup</type>
     <description/>
@@ -116,37 +147,6 @@
     </GUI>
   </transform>
   <transform>
-    <name>Diferenciar is_year_born</name>
-    <type>Formula</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <formulas>
-      <formula>
-        <field_name>year_born</field_name>
-        <formula>IF(
-	[is_year_born]= true,
-	right([born],4),
-	0
-)</formula>
-        <replace_field/>
-        <value_length>-1</value_length>
-        <value_precision>-1</value_precision>
-        <value_type>5</value_type>
-      </formula>
-    </formulas>
-    <attributes/>
-    <GUI>
-      <xloc>784</xloc>
-      <yloc>624</yloc>
-    </GUI>
-  </transform>
-  <transform>
     <name>Olympic Athlete Bio Dataset</name>
     <type>CSVInput</type>
     <description/>
@@ -157,7 +157,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\eduar\Dev\Inteligencia-Negocios\Olympic Dataset\Olympic_Athlete_Biography.csv</filename>
+    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/Olympic_Athlete_Biography.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -177,8 +177,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -188,8 +188,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>24</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -199,8 +199,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -210,8 +210,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>17</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -221,8 +221,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -232,8 +232,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>5</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -243,8 +243,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>79</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -254,8 +254,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -265,9 +265,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>2206</length>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2198</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -276,9 +276,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>661</length>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>649</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
