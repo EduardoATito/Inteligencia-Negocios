@@ -36,11 +36,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Athele Event Results Dataset</from>
-      <to>Transformando medal</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Transformando medal</from>
       <to>Transformando los IsTeamSport</to>
       <enabled>Y</enabled>
@@ -63,6 +58,16 @@
     <hop>
       <from>dim olympic nocs</from>
       <to>Poblando Facts</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Athele Event Results Dataset</from>
+      <to>Date de la inserccion</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Date de la inserccion</from>
+      <to>Transformando medal</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -216,8 +221,31 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>80</yloc>
+      <xloc>528</xloc>
+      <yloc>432</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Date de la inserccion</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>date_insert</name>
+        <type>system date (fixed)</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>336</yloc>
     </GUI>
   </transform>
   <transform>
@@ -288,6 +316,7 @@
     <fields>
       <field>
         <name>athlete_id</name>
+        <rename/>
       </field>
       <field>
         <name>country_noc</name>
@@ -303,10 +332,15 @@
       </field>
       <field>
         <name>edition_id</name>
+        <rename/>
       </field>
       <field>
         <name>result_id</name>
         <rename>event_id</rename>
+      </field>
+      <field>
+        <name>date_insert</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -389,11 +423,25 @@
         <condition>=</condition>
         <field>ATHLETE_ID</field>
         <name>athlete_id</name>
+        <name2/>
       </key>
+      <key>
+        <condition>&lt;</condition>
+        <field>DATE_FROM</field>
+        <name>date_insert</name>
+        <name2/>
+      </key>
+      <key>
+        <condition>&gt;=</condition>
+        <field>DATE_TO</field>
+        <name>date_insert</name>
+        <name2/>
+      </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_athlete_bio</table>
       <value>
-        <default>155881</default>
+        <default>155862</default>
         <name>SU_ATHLETE</name>
         <rename>fk_athlete</rename>
         <trim_type>none</trim_type>
@@ -508,19 +556,15 @@
         <condition>LIKE</condition>
         <field>FORMAT_RESULT</field>
         <name>format_result</name>
-        <name2/>
       </key>
       <key>
         <condition>LIKE</condition>
         <field>MEDAL_RESULT</field>
         <name>medal_result</name>
-        <name2/>
       </key>
-      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_medal_results</table>
       <value>
-        <default/>
         <name>SU_RESULT</name>
         <rename>fk_result</rename>
         <trim_type>none</trim_type>

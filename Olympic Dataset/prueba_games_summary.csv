@@ -1,0 +1,3 @@
+edition,edition_id,edition_url,year,city,country_flag_url,country_noc,start_date,end_date,competition_date,isHeld
+9999 Summer Olympics,99,/editions/1,1896,Athina,https://olympedia-flags.s3.eu-"Juegos Olímpicos de Verano 1896",CHI,"AYER","MAÑANA","ENTRE AYER Y HOY",
+7777 Summer Olympics,777,/editions/1,1896,Athina,https://olympedia-flags.s3.eu-"Juegos Olímpicos de Verano 1896",CHI,"AYER","MAÑANA","ENTRE AYER Y HOY",Not held due to war

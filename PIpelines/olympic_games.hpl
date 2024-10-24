@@ -21,11 +21,6 @@
   </notepads>
   <order>
     <hop>
-      <from>Olympic Games Dataset</from>
-      <to>Competiton</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Competiton</from>
       <to>start_date</to>
       <enabled>Y</enabled>
@@ -50,6 +45,11 @@
       <to>Actualiza o Insertar de la Dim OGames</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>NUEVOS DATOS</from>
+      <to>Competiton</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Actualiza o Insertar de la Dim OGames</name>
@@ -69,7 +69,6 @@
         <condition>=</condition>
         <field>EDITION_ID</field>
         <name>edition_id</name>
-        <name2/>
       </key>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_games</table>
@@ -151,7 +150,7 @@
     </GUI>
   </transform>
   <transform>
-    <name>Olympic Games Dataset</name>
+    <name>NUEVOS DATOS</name>
     <type>CSVInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -161,7 +160,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympic_Games_Summary.csv</filename>
+    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/prueba_games_summary.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -181,8 +180,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>20</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -192,8 +191,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -203,9 +202,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>13</length>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>11</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -214,8 +213,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -225,9 +224,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>24</length>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -236,9 +235,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>61</length>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>63</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -247,8 +246,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -258,8 +257,162 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>4</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>end_date</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>6</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>competition_date</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>16</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>isHeld</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>19</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Olympic Games Dataset</name>
+    <type>CSVInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/Olympic_Games_Summary.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <schemaDefinition/>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding/>
+    <fields>
+      <field>
+        <name>edition</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>20</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>edition_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>edition_url</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>13</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>year</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>city</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>24</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>country_flag_url</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>61</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>country_noc</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>start_date</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>12</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -269,8 +422,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>14</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -280,8 +433,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>25</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -291,8 +444,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>19</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
