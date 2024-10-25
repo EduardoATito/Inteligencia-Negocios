@@ -75,10 +75,8 @@
       <field>
         <length>-1</length>
         <precision>-1</precision>
-        <currency/>
         <set_empty_string>N</set_empty_string>
         <name>medal_result</name>
-        <format/>
         <group>.</group>
         <decimal>,</decimal>
         <type>String</type>
@@ -86,10 +84,8 @@
       <field>
         <length>-1</length>
         <precision>-1</precision>
-        <currency/>
         <set_empty_string>N</set_empty_string>
         <name>format_result</name>
-        <format/>
         <group>.</group>
         <decimal>,</decimal>
         <type>String</type>
@@ -140,8 +136,8 @@
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>224</yloc>
+      <xloc>768</xloc>
+      <yloc>240</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

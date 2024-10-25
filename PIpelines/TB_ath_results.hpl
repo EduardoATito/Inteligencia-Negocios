@@ -61,13 +61,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Athele Event Results Dataset</from>
-      <to>Date de la inserccion</to>
+      <from>Date de la inserccion</from>
+      <to>Transformando medal</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Date de la inserccion</from>
-      <to>Transformando medal</to>
+      <from>Athele Event Results Dataset</from>
+      <to>Date de la inserccion</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -82,7 +82,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/Olympic_Athlete_Event_Details.csv</filename>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Olympic_Athlete_Event_Details.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -95,10 +95,10 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
-        <name>﻿edition</name>
+        <name>edition</name>
         <type>String</type>
         <format/>
         <currency>$</currency>
@@ -214,15 +214,15 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>10</length>
+        <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>528</xloc>
-      <yloc>432</yloc>
+      <xloc>16</xloc>
+      <yloc>288</yloc>
     </GUI>
   </transform>
   <transform>
@@ -244,8 +244,107 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>336</yloc>
+      <xloc>128</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Nuevos Csv Resultados de Atletas</name>
+    <type>CSVInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Probando\prueba_fact_at_results.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <schemaDefinition/>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding/>
+    <fields>
+      <field>
+        <name>edition_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>country_noc</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>result_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>athlete_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>medal</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>4</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>isTeamSport</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>432</yloc>
     </GUI>
   </transform>
   <transform>
@@ -298,7 +397,7 @@
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>1488</xloc>
+      <xloc>1056</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -316,7 +415,6 @@
     <fields>
       <field>
         <name>athlete_id</name>
-        <rename/>
       </field>
       <field>
         <name>country_noc</name>
@@ -332,7 +430,6 @@
       </field>
       <field>
         <name>edition_id</name>
-        <rename/>
       </field>
       <field>
         <name>result_id</name>
@@ -340,13 +437,12 @@
       </field>
       <field>
         <name>date_insert</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>464</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -372,9 +468,11 @@
         <target_value>Individual</target_value>
       </field>
     </fields>
+    <non_match_default/>
+    <target_field/>
     <attributes/>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>352</xloc>
       <yloc>80</yloc>
     </GUI>
   </transform>
@@ -397,7 +495,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>256</xloc>
+      <xloc>240</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -423,21 +521,17 @@
         <condition>=</condition>
         <field>ATHLETE_ID</field>
         <name>athlete_id</name>
-        <name2/>
       </key>
       <key>
         <condition>&lt;</condition>
         <field>DATE_FROM</field>
         <name>date_insert</name>
-        <name2/>
       </key>
       <key>
         <condition>&gt;=</condition>
         <field>DATE_TO</field>
         <name>date_insert</name>
-        <name2/>
       </key>
-      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_athlete_bio</table>
       <value>
@@ -450,7 +544,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>1184</xloc>
+      <xloc>848</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -476,7 +570,9 @@
         <condition>=</condition>
         <field>EVENT_ID</field>
         <name>event_id</name>
+        <name2/>
       </key>
+      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_events</table>
       <value>
@@ -489,7 +585,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>1072</xloc>
+      <xloc>768</xloc>
       <yloc>80</yloc>
     </GUI>
   </transform>
@@ -515,13 +611,10 @@
         <condition>=</condition>
         <field>EDITION_ID</field>
         <name>edition_id</name>
-        <name2/>
       </key>
-      <orderby/>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_games</table>
       <value>
-        <default/>
         <name>SU_EDITION</name>
         <rename>fk_edition</rename>
         <trim_type>none</trim_type>
@@ -530,7 +623,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>928</xloc>
+      <xloc>672</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -573,7 +666,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>784</xloc>
+      <xloc>576</xloc>
       <yloc>80</yloc>
     </GUI>
   </transform>
@@ -600,6 +693,16 @@
         <field>NOC_CODE</field>
         <name>noc_code</name>
       </key>
+      <key>
+        <condition>&lt;</condition>
+        <field>DATE_FROM</field>
+        <name>date_insert</name>
+      </key>
+      <key>
+        <condition>&gt;=</condition>
+        <field>DATE_TO</field>
+        <name>date_insert</name>
+      </key>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_nocs</table>
       <value>
@@ -611,7 +714,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>1344</xloc>
+      <xloc>960</xloc>
       <yloc>80</yloc>
     </GUI>
   </transform>

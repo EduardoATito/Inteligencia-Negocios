@@ -36,7 +36,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>New Athletes</from>
+      <from>Olympic Athlete Bio Dataset</from>
       <to>Ver si cumple con DD MM YY</to>
       <enabled>Y</enabled>
     </hop>
@@ -67,8 +67,8 @@
     </formulas>
     <attributes/>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>624</yloc>
+      <xloc>704</xloc>
+      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform>
@@ -141,12 +141,12 @@
     <use_start_date_alternative>N</use_start_date_alternative>
     <attributes/>
     <GUI>
-      <xloc>1152</xloc>
-      <yloc>640</yloc>
+      <xloc>1024</xloc>
+      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>New Athletes</name>
+    <name>Nuevo Csv Atletas Bio</name>
     <type>CSVInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -156,7 +156,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/prueba_athlete.csv</filename>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Probando\prueba_athlete.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -176,8 +176,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -187,9 +187,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>13</length>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>20</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -198,8 +198,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -209,8 +209,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>12</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -220,19 +220,19 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>weight</name>
-        <type>Integer</type>
+        <type>String</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -242,8 +242,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>9</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -253,8 +253,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -264,9 +264,9 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>34</length>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>36</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -275,8 +275,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -284,8 +284,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>704</yloc>
+      <xloc>592</xloc>
+      <yloc>400</yloc>
     </GUI>
   </transform>
   <transform>
@@ -427,8 +427,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>432</yloc>
+      <xloc>416</xloc>
+      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform>
@@ -459,8 +459,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>448</yloc>
+      <xloc>560</xloc>
+      <yloc>80</yloc>
     </GUI>
   </transform>
   <transform>
@@ -482,8 +482,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>448</yloc>
+      <xloc>848</xloc>
+      <yloc>80</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

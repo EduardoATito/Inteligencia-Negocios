@@ -1,3 +1,4 @@
+-----------------------------DIM OLYMPIC EDITIONS-------------------------------
 create table dim_olympic_games(
     su_edition number generated always as identity,
     edition_id number,
@@ -14,8 +15,7 @@ create table dim_olympic_games(
 ALTER TABLE dim_olympic_games ADD CONSTRAINT dim_olympic_games_pk PRIMARY KEY (su_edition) RELY;
 ALTER TABLE dim_olympic_games ADD CONSTRAINT dim_olympic_games_uk UNIQUE (edition_id);
 
-================================================================================================
-
+-----------------------------DIM MEDAL RESULTS------------------------------
 create table dim_olympic_medal_results(
     su_result number generated always as identity,
     medal_result VARCHAR2(15),
@@ -24,8 +24,7 @@ create table dim_olympic_medal_results(
 
 ALTER TABLE dim_olympic_medal_results ADD CONSTRAINT dim_medal_results_pk PRIMARY KEY (su_result) RELY;
 
-================================================================================================
-
+--------------------------------DIM EVENTS---------------------------
 create table dim_olympic_events(
     su_event number generated always as identity,
     event_id number,
@@ -41,8 +40,7 @@ create table dim_olympic_events(
 ALTER TABLE dim_olympic_events ADD CONSTRAINT dim_olympic_events_pk PRIMARY KEY (su_event) RELY;
 ALTER TABLE dim_olympic_events ADD CONSTRAINT dim_olympic_events_uk UNIQUE (event_id);
 
-============================================================================
-
+-----------------------------DIM ATHLETE BIO-------------------------------
 create table dim_olympic_athlete_bio(
     su_athlete number,
     athlete_id number,
@@ -58,7 +56,6 @@ create table dim_olympic_athlete_bio(
 );
 
 ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_olympic_athlete_bio_pk PRIMARY KEY (su_athlete) RELY;
-ALTER TABLE dim_olympic_athlete_bio ADD CONSTRAINT dim_olympic_athlete_bio_uk UNIQUE (athlete_id);
 
 CREATE SEQUENCE OLYMPIC_ATHLETE_BIO_SEQ
   START WITH 1 
@@ -66,7 +63,7 @@ CREATE SEQUENCE OLYMPIC_ATHLETE_BIO_SEQ
   CACHE 10
   NOCYCLE;
   
-================================================
+---------------------------DIM NOCS---------------------------------
 
 create table dim_olympic_nocs(
     su_noc number,
@@ -81,7 +78,6 @@ create table dim_olympic_nocs(
 );
 
 ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_olympic_nocs_pk PRIMARY KEY (su_noc) RELY;
-ALTER TABLE dim_olympic_nocs ADD CONSTRAINT dim_olympic_nocs_uk UNIQUE (noc_code);
 
 CREATE SEQUENCE OLYMPIC_NOCS_SEQ
   START WITH 1 
@@ -89,14 +85,14 @@ CREATE SEQUENCE OLYMPIC_NOCS_SEQ
   CACHE 10
   NOCYCLE;
   
-======Facts========================================
+---------------------------TABLAS DE HECHOS ATHLETE EVENTS RESULTS----------------------------------
 
 create table fact_athlete_event_results(
-    fk_event number constraint event_nn not null,
-    fk_edition number constraint edition_nn not null,
-    fk_result number constraint result_nn not null,
-    fk_athlete number constraint athlete_nn not null,
-    fk_noc number constraint noc_nn not null
+    fk_event number constraint fact_athlete_event_event_results_event_nn not null,
+    fk_edition number constraint fact_athlete_event_event_results_edition_nn not null,
+    fk_result number constraint fact_athlete_event_event_results_result_nn not null,
+    fk_athlete number constraint fact_athlete_event_event_results_athlete_nn not null,
+    fk_noc number constraint fact_athlete_event_event_results_noc_nn not null
 );
 
 alter table fact_athlete_event_results
@@ -129,7 +125,7 @@ foreign key(fk_noc)
 references dim_olympic_nocs
 rely disable novalidate;
 
-====BitMaps====
+----------------------BITMAPS---------------------------------------
 
 create bitmap index fact_athlete_event_results_fk_event_idx_bm 
 on fact_athlete_event_results(fk_event)
@@ -146,8 +142,7 @@ on fact_athlete_event_results(fk_athlete)
 create bitmap index fact_athlete_event_results_fk_noc_idx_bm 
 on fact_athlete_event_results(fk_noc)
 
-================================================
-
+---------------------------TABLAS DE HECHOS OLYMPIC MEDALL TALLY----------------------------------
 create table fact_olympic_medal_tally(
     fk_edition number constraint medal_tally_edition_nn not null,
     fk_noc number constraint medal_tally_noc_nn not null,
@@ -169,7 +164,7 @@ foreign key(fk_noc)
 references dim_olympic_nocs
 rely disable novalidate;
 
--------------Bitmaps------
+-------------------BITMAPS--------------------
 create bitmap index fact_olympic_medal_tally_fk_edition_idx_bm 
 on fact_olympic_medal_tally(fk_edition);
 

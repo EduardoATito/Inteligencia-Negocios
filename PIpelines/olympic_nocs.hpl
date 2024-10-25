@@ -21,12 +21,7 @@
   </notepads>
   <order>
     <hop>
-      <from>Olympic Noc Dataset</from>
-      <to>Ordenando por AZ El codigo Noc</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Ordenando por AZ El codigo Noc</from>
+      <from>Olympic Nocs Dataset</from>
       <to>Dimension lookup/update de la dim ONocs</to>
       <enabled>Y</enabled>
     </hop>
@@ -91,12 +86,12 @@
     <use_start_date_alternative>N</use_start_date_alternative>
     <attributes/>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>384</yloc>
+      <xloc>800</xloc>
+      <yloc>288</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Olympic Noc Dataset</name>
+    <name>Nuevo Csv Nocs</name>
     <type>CSVInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -106,7 +101,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/eduardo/Dev/InteligenciaNegocios/Olympic Dataset/Olympics_Country.csv</filename>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Probando\prueba_nocs.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -128,7 +123,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>50</length>
+        <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -139,7 +134,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>300</length>
+        <length>18</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -150,7 +145,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>50</length>
+        <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -161,31 +156,31 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>300</length>
+        <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>isActive</name>
-        <type>Boolean</type>
+        <type>String</type>
         <format/>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>50</length>
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>384</yloc>
+      <xloc>560</xloc>
+      <yloc>432</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Ordenando por AZ El codigo Noc</name>
-    <type>SortRows</type>
+    <name>Olympic Nocs Dataset</name>
+    <type>CSVInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -194,27 +189,81 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <directory>${java.io.tmpdir}</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Olympics_Country.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <schemaDefinition/>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
+        <name>noc</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>country</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>37</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>anoc</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>36</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>continet</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>21</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>isActive</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>192</yloc>
+      <xloc>432</xloc>
+      <yloc>288</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
