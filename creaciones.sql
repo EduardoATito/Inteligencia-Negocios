@@ -125,7 +125,6 @@ foreign key(fk_noc)
 references dim_olympic_nocs
 rely disable novalidate;
 
-
 ----------------------BITMAPS---------------------------------------
 
 create bitmap index fact_athlete_event_results_fk_event_idx_bm 
