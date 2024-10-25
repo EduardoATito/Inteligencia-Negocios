@@ -189,7 +189,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Olympics_Country.csv</filename>
+    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/Olympics_Country.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -209,8 +209,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -220,8 +220,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>37</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -231,8 +231,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>36</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -242,8 +242,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>21</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -253,8 +253,8 @@
         <type>String</type>
         <format/>
         <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>

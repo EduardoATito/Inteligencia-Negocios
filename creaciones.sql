@@ -94,7 +94,7 @@ create table fact_athlete_event_results(
     fk_athlete number constraint fact_athlete_event_event_results_athlete_nn not null,
     fk_noc number constraint fact_athlete_event_event_results_noc_nn not null
 );
-
+--Constraints
 alter table fact_athlete_event_results
 add constraint fact_aev_dim_olympic_events_fk
 foreign key(fk_event)
@@ -125,22 +125,22 @@ foreign key(fk_noc)
 references dim_olympic_nocs
 rely disable novalidate;
 
-----------------------BITMAPS---------------------------------------
+--Bitmaps
 
 create bitmap index fact_athlete_event_results_fk_event_idx_bm 
-on fact_athlete_event_results(fk_event)
+on fact_athlete_event_results(fk_event);
 
 create bitmap index fact_athlete_event_results_fk_edition_idx_bm 
-on fact_athlete_event_results(fk_edition)
+on fact_athlete_event_results(fk_edition);
 
 create bitmap index fact_athlete_event_results_fk_medal_result_idx_bm 
-on fact_athlete_event_results(fk_result)
+on fact_athlete_event_results(fk_result);
 
 create bitmap index fact_athlete_event_results_fk_athlete_idx_bm 
-on fact_athlete_event_results(fk_athlete)
+on fact_athlete_event_results(fk_athlete);
 
 create bitmap index fact_athlete_event_results_fk_noc_idx_bm 
-on fact_athlete_event_results(fk_noc)
+on fact_athlete_event_results(fk_noc);
 
 ---------------------------TABLAS DE HECHOS OLYMPIC MEDALL TALLY----------------------------------
 create table fact_olympic_medal_tally(
@@ -151,7 +151,7 @@ create table fact_olympic_medal_tally(
     bronze number,
     total number
 );
-
+--Constraints
 alter table fact_olympic_medal_tally
 add constraint fact_mtally_dim_olympic_games_fk
 foreign key(fk_edition)
@@ -163,8 +163,7 @@ add constraint fact_mtally_dim_olympic_nocs_fk
 foreign key(fk_noc)
 references dim_olympic_nocs
 rely disable novalidate;
-
--------------------BITMAPS--------------------
+--Bitmaps
 create bitmap index fact_olympic_medal_tally_fk_edition_idx_bm 
 on fact_olympic_medal_tally(fk_edition);
 

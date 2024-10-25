@@ -44,7 +44,6 @@
         <condition>=</condition>
         <field>EVENT_ID</field>
         <name>result_id</name>
-        <name2/>
       </key>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_events</table>
