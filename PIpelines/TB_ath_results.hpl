@@ -62,11 +62,11 @@
     </hop>
     <hop>
       <from>Athele Event Results Dataset</from>
-      <to>Get system info</to>
+      <to>Date de la insercion</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get system info</from>
+      <from>Date de la insercion</from>
       <to>Transformando medal</to>
       <enabled>Y</enabled>
     </hop>
@@ -82,7 +82,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/Olympic_Athlete_Event_Details.csv</filename>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Olympic_Athlete_Event_Details.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -226,7 +226,7 @@
     </GUI>
   </transform>
   <transform>
-    <name>Get system info</name>
+    <name>Date de la insercion</name>
     <type>SystemInfo</type>
     <description/>
     <distribute>Y</distribute>
@@ -259,7 +259,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/eduardoatito/Dev/Inteligencia-Negocios/Olympic Dataset/Probando/prueba_fact_at_results.csv</filename>
+    <filename>C:\Users\eduardo\Dev\Inteligencia-Negocios\Olympic Dataset\Probando\prueba_fact_at_results.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -272,7 +272,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>edition_id</name>
@@ -343,7 +343,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>224</xloc>
+      <xloc>256</xloc>
       <yloc>400</yloc>
     </GUI>
   </transform>
@@ -397,7 +397,7 @@
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>1056</xloc>
+      <xloc>1088</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -439,23 +439,6 @@
         <name>sys_date</name>
       </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>sys_date</name>
-        <rename>sys_date</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>MM/dd/yyyy HH:mm:ss</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <GUI>
@@ -536,9 +519,17 @@
         <condition>=</condition>
         <field>ATHLETE_ID</field>
         <name>athlete_id</name>
-        <name2/>
       </key>
-      <orderby/>
+      <key>
+        <condition>&lt;</condition>
+        <field>DATE_FROM</field>
+        <name>sys_date</name>
+      </key>
+      <key>
+        <condition>&gt;=</condition>
+        <field>DATE_TO</field>
+        <name>sys_date</name>
+      </key>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_athlete_bio</table>
       <value>
@@ -549,25 +540,14 @@
         <type>Integer</type>
       </value>
       <value>
-        <default/>
         <name>DATE_FROM</name>
-        <rename/>
         <trim_type>none</trim_type>
-        <type/>
+        <type>Date</type>
       </value>
       <value>
-        <default/>
         <name>DATE_TO</name>
-        <rename/>
         <trim_type>none</trim_type>
-        <type/>
-      </value>
-      <value>
-        <default/>
-        <name>VERSION</name>
-        <rename/>
-        <trim_type>none</trim_type>
-        <type>Integer</type>
+        <type>Date</type>
       </value>
     </lookup>
     <attributes/>
@@ -718,31 +698,34 @@
         <condition>LIKE</condition>
         <field>NOC_CODE</field>
         <name>noc_code</name>
-        <name2/>
       </key>
-      <orderby/>
+      <key>
+        <condition>&lt;</condition>
+        <field>DATE_FROM</field>
+        <name>sys_date</name>
+      </key>
+      <key>
+        <condition>&gt;=</condition>
+        <field>DATE_TO</field>
+        <name>sys_date</name>
+      </key>
       <schema>IN2024_OLIMPIADAS</schema>
       <table>dim_olympic_nocs</table>
       <value>
-        <default/>
         <name>SU_NOC</name>
         <rename>fk_noc</rename>
         <trim_type>none</trim_type>
         <type>Integer</type>
       </value>
       <value>
-        <default/>
         <name>DATE_FROM</name>
-        <rename/>
         <trim_type>none</trim_type>
-        <type/>
+        <type>Date</type>
       </value>
       <value>
-        <default/>
         <name>DATE_TO</name>
-        <rename/>
         <trim_type>none</trim_type>
-        <type/>
+        <type>Date</type>
       </value>
     </lookup>
     <attributes/>
