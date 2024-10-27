@@ -343,8 +343,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>400</yloc>
+      <xloc>192</xloc>
+      <yloc>432</yloc>
     </GUI>
   </transform>
   <transform>

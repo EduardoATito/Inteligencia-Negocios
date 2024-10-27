@@ -1,22 +1,33 @@
 --Pregunta 6
+--por rangos
 SELECT
     at.athlete_sex AS gender,
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1912 THEN 1 END) AS "1896-1912",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1924 THEN 1 END) AS "1896-1924",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1936 THEN 1 END) AS "1896-1936",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1948 THEN 1 END) AS "1896-1948",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1960 THEN 1 END) AS "1896-1960",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1972 THEN 1 END) AS "1896-1972",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1984 THEN 1 END) AS "1896-1984",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 1996 THEN 1 END) AS "1896-1996",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 2008 THEN 1 END) AS "1896-2008",
-    COUNT(CASE WHEN ga.edition_year BETWEEN 1896 AND 2022 THEN 1 END) AS "1896-2018"
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1896 AND 1912 THEN ft.fk_athlete END) AS "1896-1912",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1912 AND 1924 THEN ft.fk_athlete END) AS "1912-1924",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1924 AND 1936 THEN ft.fk_athlete END) AS "1924-1936",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1936 AND 1948 THEN ft.fk_athlete END) AS "1936-1948",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1948 AND 1960 THEN ft.fk_athlete END) AS "1948-1960",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1960 AND 1972 THEN ft.fk_athlete END) AS "1960-1972",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1972 AND 1984 THEN ft.fk_athlete END) AS "1972-1984",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1984 AND 1996 THEN ft.fk_athlete END) AS "1984-1996",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 1996 AND 2008 THEN ft.fk_athlete END) AS "1996-2008",
+    COUNT(DISTINCT CASE WHEN ga.edition_year BETWEEN 2008 AND 2022 THEN ft.fk_athlete END) AS "2008-2022"
 FROM fact_athlete_event_results ft
 JOIN dim_olympic_games ga ON ft.fk_edition = ga.su_edition
 JOIN dim_olympic_athlete_bio at ON ft.fk_athlete = at.su_athlete
-AND at.athlete_sex IS NOT NULL
+WHERE at.athlete_sex = 'Female'
 GROUP BY at.athlete_sex
 ORDER BY at.athlete_sex;
+--por años
+SELECT
+    ga.edition_year,
+    COUNT(DISTINCT ft.fk_athlete) AS n_mujeres_particpantes
+FROM fact_athlete_event_results ft
+JOIN dim_olympic_games ga ON ft.fk_edition = ga.su_edition
+JOIN dim_olympic_athlete_bio at ON ft.fk_athlete = at.su_athlete
+WHERE at.athlete_sex = 'Female'
+GROUP BY ga.edition_year
+ORDER BY ga.edition_year;
 
 --Pregunta 7
 SELECT

@@ -110,7 +110,7 @@ rely disable novalidate;
 alter table fact_athlete_event_results
 add constraint fact_aev_dim_olympic_result_fk
 foreign key(fk_result)
-references dim_medal_result
+references dim_olympic_medal_results
 rely disable novalidate;
 
 alter table fact_athlete_event_results
